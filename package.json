@@ -1,0 +1,24 @@
+{
+  "name": "underline",
+  "version": "1.0.0",
+  "description": "Bound underscore functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankurp/underline.git"
+  },
+  "keywords": [
+    "underscore",
+    "es7",
+    "bind"
+  ],
+  "author": "Ankur Patel <ankur.patel@ymail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ankurp/underline/issues"
+  },
+  "homepage": "https://github.com/ankurp/underline#readme"
+}
