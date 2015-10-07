@@ -2,7 +2,7 @@
 
 The correct way to use underscore.js using modern ES7 functional bind `::` syntax.
 
-```
+```javascript
 import { map, reduce } from 'underline';
 
 // Map an array with underline
@@ -24,7 +24,7 @@ _.reduce([1, 2, 3], (a, e) => a + e, 0)
 
 **Underline supports chaining without wrapping like underscore**
 
-```
+```javascript
 [1, 2, 3]::map((e) => e * 10)
          ::reduce((a, e) => a + e, 0)
 ```
