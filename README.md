@@ -14,7 +14,7 @@ import { map, reduce } from 'underline';
 
 The way it is currently used now 
 
-```
+```javascript
 // Functional way to map using underscore
 _.map([1, 2, 3], (e) => e * 10)
 
