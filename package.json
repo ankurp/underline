@@ -4,7 +4,7 @@
   "description": "Bound underscore functions",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "./node_modules/babel/bin/babel.js index.es --out-file index.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/ankurp/underline/issues"
   },
-  "homepage": "https://github.com/ankurp/underline#readme"
+  "homepage": "https://github.com/ankurp/underline#readme",
+  "devDependencies": {
+    "babel": "^5.8.23"
+  },
+  "dependencies": {
+    "underscore": "^1.8.3"
+  }
 }
