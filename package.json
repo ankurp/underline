@@ -2,9 +2,9 @@
   "name": "underline",
   "version": "1.0.0",
   "description": "Bound underscore functions",
-  "main": "index.js",
+  "main": "underline.js",
   "scripts": {
-    "prepublish": "./node_modules/babel/bin/babel.js index.es --out-file index.js"
+    "prepublish": "./node_modules/babel/bin/babel.js index.js --out-file underline.js"
   },
   "repository": {
     "type": "git",
