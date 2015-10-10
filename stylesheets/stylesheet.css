@@ -274,12 +274,22 @@ body,
 .project-tagline {
     font-weight: normal;
     margin: 0;
+    color: #8F908A;
     padding-bottom: 1rem;
 }
 
 .project-name {
     margin-top: 0;
     margin-bottom: 0;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 @media screen and (min-width: 64em) {
@@ -306,5 +316,8 @@ body,
     }
     .project-tagline {
         font-size: 1rem;
+    }
+    .fork {
+      display: none;
     }
 }
