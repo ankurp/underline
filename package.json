@@ -1,6 +1,6 @@
 {
   "name": "underline",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Bound underscore functions",
   "main": "underline.js",
   "scripts": {
@@ -11,7 +11,10 @@
     "url": "git+https://github.com/ankurp/underline.git"
   },
   "keywords": [
+    "underline",
+    "underline.js",
     "underscore",
+    "lodash",
     "es7",
     "bind"
   ],
@@ -20,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/ankurp/underline/issues"
   },
-  "homepage": "https://github.com/ankurp/underline#readme",
+  "homepage": "http://ankurp.github.io/underline/",
   "devDependencies": {
     "babel": "^5.8.23"
   },

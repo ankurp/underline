@@ -1,24 +1,28 @@
 # Underline.js - Underscore.js for modern Javascript
 
-The correct way to use underscore.js using modern ES7 functional bind `::` syntax.
+Using modern ES7 functional bind `::` syntax you can now call the underscore.js function the 'right' or non-functional way. underline.js is a thin layer between your code and underscore.js which binds all underscore functions called to the target object.
+
+## Example
 
 ```javascript
-import { map, reduce } from 'underline';
+import { map, reduce } from 'underline'; // Require functions needed
 
-// Map an array with underline
-[1, 2, 3]::map((e) => e * 10));
+// Mapping an array
+[1, 2, 3]::map((e) => e * 10);
+// => [10, 20, 30]
 
-// Sum an array using underline
+// Sum an array
 [1, 2, 3]::reduce((a, e) => a + e, 0)
-```
+// => 6
 
-The way it is currently used now 
+/////
+// VS
+/////
 
-```javascript
-// Functional way to map using underscore
+// Functional way to map
 _.map([1, 2, 3], (e) => e * 10)
 
-// Functional way to reduce
+// and reduce
 _.reduce([1, 2, 3], (a, e) => a + e, 0)
 ```
 
@@ -27,19 +31,33 @@ _.reduce([1, 2, 3], (a, e) => a + e, 0)
 ```javascript
 [1, 2, 3]::map((e) => e * 10)
          ::reduce((a, e) => a + e, 0)
+// => 60
+
+/////
+// VS
+/////
+
+// Too much typing to chain in underscore and get its value
+_.chain([1, 2, 3]).map((e) => e * 10)
+                  .reduce((a, e) => a + e, 0)
+                  .value()
 ```
+
+## Try it
+
+Try it out in the [REPL](http://ankurp.github.io/underline/)
 
 ## Usage
 
-To get started you will need use [Babel](https://babeljs.io) transpiler with experimental feature [es7.functionBind](http://babeljs.io/blog/2015/05/14/function-bind/#usage) turned on. Then
+To get started you will need to use [Babel](https://babeljs.io) transpiler with experimental feature [es7.functionBind](http://babeljs.io/blog/2015/05/14/function-bind/#usage) enabled. Then:
 
-1. Install using npm - `npm install --save underline`
-2. Import functions needed - `import { map } from 'underline'`
+1. Install this library using npm - `npm install --save underline`
+2. Import functions as needed - `import { map } from 'underline'`
 3. Call a function using `::` operator as such `[1, 2, 3]::map((e) => e * 10)`
 
 ## Functions Available
 
-All of the functions available in [underscore.js](http://underscorejs.org/) are available in `underline.js`
+All of the functions available in [underscore.js](http://underscorejs.org/) are available in `underline.js`.
 
 * `iteratee`
 * `forEach`
