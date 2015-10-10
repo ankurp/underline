@@ -1,212 +1,38 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<html>
   <head>
     <meta charset="UTF-8">
     <title>Underline.js by ankurp</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <script src="//cdn.jsdelivr.net/ace/1.2.0/min/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="//cdn.jsdelivr.net/g/jquery@2.1.3,lodash@2.4.1" type="text/javascript" charset="utf-8"></script>
+    <script src="//babeljs.io/scripts/babel.js" type="text/javascript" charset="utf-8"></script>
   </head>
   <body>
     <section class="page-header">
       <h1 class="project-name">Underline.js</h1>
-      <h2 class="project-tagline">underline.js is like underscore.js but using modern ES7 syntax</h2>
-      <a href="https://github.com/ankurp/underline" class="btn">View on GitHub</a>
-      <a href="https://github.com/ankurp/underline/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/ankurp/underline/tarball/master" class="btn">Download .tar.gz</a>
+      <h2 class="project-tagline">underline.js is like underscore.js but using modern ES7 syntax. Try it &darr;</h2>
     </section>
+    <div id="editor">import { map, reduce } from 'underline';
 
-    <section class="main-content">
-      <h1>
-<a id="underlinejs---underscorejs-for-modern-javascript" class="anchor" href="#underlinejs---underscorejs-for-modern-javascript" aria-hidden="true"><span class="octicon octicon-link"></span></a>Underline.js - Underscore.js for modern Javascript</h1>
+// Map an array with underline
+console.log('Result of mapping:',
+  [1, 2, 3]::map((e) => e * 10)
+);
 
-<p>The correct way to use underscore.js using modern ES7 functional bind <code>::</code> syntax.</p>
+// Sum an array using underline
+console.log('Result of reducing:',
+  [1, 2, 3]::reduce((a, e) => a + e, 0)
+);
 
-<div class="highlight highlight-source-js"><pre><span class="pl-k">import</span> { map, reduce } <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>underline<span class="pl-pds">'</span></span>;
-
-<span class="pl-c">// Map an array with underline</span>
-[<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>]<span class="pl-k">::</span>map((<span class="pl-smi">e</span>)<span class="pl-k"> =&gt;</span> e <span class="pl-k">*</span> <span class="pl-c1">10</span>));
-
-<span class="pl-c">// Sum an array using underline</span>
-[<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>]<span class="pl-k">::</span>reduce((<span class="pl-smi">a</span>, <span class="pl-smi">e</span>)<span class="pl-k"> =&gt;</span> a <span class="pl-k">+</span> e, <span class="pl-c1">0</span>)</pre></div>
-
-<p>The way it is currently used now </p>
-
-<div class="highlight highlight-source-js"><pre><span class="pl-c">// Functional way to map using underscore</span>
-_.map([<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>], (<span class="pl-smi">e</span>)<span class="pl-k"> =&gt;</span> e <span class="pl-k">*</span> <span class="pl-c1">10</span>)
-
-<span class="pl-c">// Functional way to reduce</span>
-_.reduce([<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>], (<span class="pl-smi">a</span>, <span class="pl-smi">e</span>)<span class="pl-k"> =&gt;</span> a <span class="pl-k">+</span> e, <span class="pl-c1">0</span>)</pre></div>
-
-<p><strong>Underline supports chaining without wrapping like underscore</strong></p>
-
-<div class="highlight highlight-source-js"><pre>[<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>]<span class="pl-k">::</span>map((<span class="pl-smi">e</span>)<span class="pl-k"> =&gt;</span> e <span class="pl-k">*</span> <span class="pl-c1">10</span>)
-         <span class="pl-k">::</span>reduce((<span class="pl-smi">a</span>, <span class="pl-smi">e</span>)<span class="pl-k"> =&gt;</span> a <span class="pl-k">+</span> e, <span class="pl-c1">0</span>)</pre></div>
-
-<h2>
-<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
-
-<p>To get started you will need use <a href="https://babeljs.io">Babel</a> transpiler with experimental feature <a href="http://babeljs.io/blog/2015/05/14/function-bind/#usage">es7.functionBind</a> turned on. Then</p>
-
-<ol>
-<li>Install using npm - <code>npm install --save underline</code>
-</li>
-<li>Import functions needed - <code>import { map } from 'underline'</code>
-</li>
-<li>Call a function using <code>::</code> operator as such <code>[1, 2, 3]::map((e) =&gt; e * 10)</code>
-</li>
-</ol>
-
-<h2>
-<a id="functions-available" class="anchor" href="#functions-available" aria-hidden="true"><span class="octicon octicon-link"></span></a>Functions Available</h2>
-
-<p>All of the functions available in <a href="http://underscorejs.org/">underscore.js</a> are available in <code>underline.js</code></p>
-
-<ul>
-<li><code>iteratee</code></li>
-<li><code>forEach</code></li>
-<li><code>each</code></li>
-<li><code>collect</code></li>
-<li><code>map</code></li>
-<li><code>inject</code></li>
-<li><code>foldl</code></li>
-<li><code>reduce</code></li>
-<li><code>foldr</code></li>
-<li><code>reduceRight</code></li>
-<li><code>detect</code></li>
-<li><code>find</code></li>
-<li><code>select</code></li>
-<li><code>filter</code></li>
-<li><code>reject</code></li>
-<li><code>all</code></li>
-<li><code>every</code></li>
-<li><code>any</code></li>
-<li><code>some</code></li>
-<li><code>include</code></li>
-<li><code>includes</code></li>
-<li><code>contains</code></li>
-<li><code>invoke</code></li>
-<li><code>pluck</code></li>
-<li><code>where</code></li>
-<li><code>findWhere</code></li>
-<li><code>max</code></li>
-<li><code>min</code></li>
-<li><code>shuffle</code></li>
-<li><code>sample</code></li>
-<li><code>sortBy</code></li>
-<li><code>groupBy</code></li>
-<li><code>indexBy</code></li>
-<li><code>countBy</code></li>
-<li><code>toArray</code></li>
-<li><code>size</code></li>
-<li><code>partition</code></li>
-<li><code>take</code></li>
-<li><code>head</code></li>
-<li><code>first</code></li>
-<li><code>initial</code></li>
-<li><code>last</code></li>
-<li><code>drop</code></li>
-<li><code>tail</code></li>
-<li><code>rest</code></li>
-<li><code>compact</code></li>
-<li><code>flatten</code></li>
-<li><code>without</code></li>
-<li><code>unique</code></li>
-<li><code>uniq</code></li>
-<li><code>union</code></li>
-<li><code>intersection</code></li>
-<li><code>difference</code></li>
-<li><code>zip</code></li>
-<li><code>unzip</code></li>
-<li><code>object</code></li>
-<li><code>findIndex</code></li>
-<li><code>findLastIndex</code></li>
-<li><code>sortedIndex</code></li>
-<li><code>indexOf</code></li>
-<li><code>lastIndexOf</code></li>
-<li><code>range</code></li>
-<li><code>bind</code></li>
-<li><code>partial</code></li>
-<li><code>bindAll</code></li>
-<li><code>memoize</code></li>
-<li><code>delay</code></li>
-<li><code>defer</code></li>
-<li><code>throttle</code></li>
-<li><code>debounce</code></li>
-<li><code>wrap</code></li>
-<li><code>negate</code></li>
-<li><code>compose</code></li>
-<li><code>after</code></li>
-<li><code>before</code></li>
-<li><code>once</code></li>
-<li><code>keys</code></li>
-<li><code>allKeys</code></li>
-<li><code>values</code></li>
-<li><code>mapObject</code></li>
-<li><code>pairs</code></li>
-<li><code>invert</code></li>
-<li><code>methods</code></li>
-<li><code>functions</code></li>
-<li><code>extend</code></li>
-<li><code>assign</code></li>
-<li><code>extendOwn</code></li>
-<li><code>findKey</code></li>
-<li><code>pick</code></li>
-<li><code>omit</code></li>
-<li><code>defaults</code></li>
-<li><code>create</code></li>
-<li><code>clone</code></li>
-<li><code>tap</code></li>
-<li><code>isMatch</code></li>
-<li><code>isEqual</code></li>
-<li><code>isEmpty</code></li>
-<li><code>isElement</code></li>
-<li><code>isArray</code></li>
-<li><code>isObject</code></li>
-<li><code>isArguments</code></li>
-<li><code>isFunction</code></li>
-<li><code>isString</code></li>
-<li><code>isNumber</code></li>
-<li><code>isDate</code></li>
-<li><code>isRegExp</code></li>
-<li><code>isError</code></li>
-<li><code>isFinite</code></li>
-<li><code>isNaN</code></li>
-<li><code>isBoolean</code></li>
-<li><code>isNull</code></li>
-<li><code>isUndefined</code></li>
-<li><code>has</code></li>
-<li><code>noConflict</code></li>
-<li><code>identity</code></li>
-<li><code>constant</code></li>
-<li><code>noop</code></li>
-<li><code>property</code></li>
-<li><code>propertyOf</code></li>
-<li><code>matches</code></li>
-<li><code>matcher</code></li>
-<li><code>times</code></li>
-<li><code>random</code></li>
-<li><code>now</code></li>
-<li><code>escape</code></li>
-<li><code>unescape</code></li>
-<li><code>result</code></li>
-<li><code>uniqueId</code></li>
-<li><code>templateSettings</code></li>
-<li><code>template</code></li>
-<li><code>chain</code></li>
-<li><code>mixin</code></li>
-</ul>
-
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/ankurp/underline">Underline.js</a> is maintained by <a href="https://github.com/ankurp">ankurp</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
-
-    </section>
-
-  
+// Chaining map and reduce
+console.log('Result of mapping and reducing:',
+  [1, 2, 3]::map((e) => e * 10)
+          ::reduce((a, e) => a + e, 0)
+);
+</div>
+    <div class="repl-reporter repl-console"></div>
+    <script src="javascripts/repl.js" type="text/javascript" charset="utf-8"></script>
+    <a href="https://github.com/ankurp/underline"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
   </body>
 </html>
