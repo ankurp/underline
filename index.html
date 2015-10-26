@@ -23,22 +23,22 @@
       <a href="https://github.com/ankurp/underline"><h1 class="project-name">Underline.js</h1></a>
       <h2 class="project-tagline">underline.js is like underscore.js but using modern ES7 syntax. Try it &darr;</h2>
     </section>
-    <div id="editor">import { map, reduce } from 'underline';
+    <div id="editor">import { difference, all } from 'underline';
 
-// Map an array with underline
-console.log('Result of mapping:',
-  [1, 2, 3]::map((e) => e * 10)
+// Differece of arrays
+console.log('Result of difference:',
+  [12, 1, 2, 3, 10, 11]::difference([10, 11, 12])
 );
 
-// Sum an array using underline
-console.log('Result of reducing:',
-  [1, 2, 3]::reduce((a, e) => a + e, 0)
+// check for all elements are less than 10 returns false
+console.log('Result of all:',
+  [1, 2, 3, 10]::all((e) => e < 10)
 );
 
-// Chaining map and reduce
-console.log('Result of mapping and reducing:',
-  [1, 2, 3]::map((e) => e * 10)
-           ::reduce((a, e) => a + e, 0)
+// Chaining difference and all
+console.log('Result of difference and all:',
+  [12, 1, 2, 3, 10, 11]::difference([10, 11, 12])
+                       ::all((e) => e < 10)
 );
 </div>
     <div class="repl-reporter repl-console"></div>
