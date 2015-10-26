@@ -1,5 +1,8 @@
 # Underline.js - Underscore.js for modern Javascript
 
+[![npm package](https://img.shields.io/npm/v/underline.svg?style=flat-square)](https://www.npmjs.org/package/underline)
+[![Dependency Status](https://david-dm.org/ankurp/underline.svg?style=flat-square)](https://david-dm.org/ankurp/underline)
+
 Using modern ES7 functional bind `::` syntax you can now call the underscore.js function the 'right' or non-functional way. underline.js is a thin layer between your code and underscore.js which binds all underscore functions called to the target object.
 
 ## Example
