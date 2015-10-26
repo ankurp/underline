@@ -5,42 +5,43 @@ Using modern ES7 functional bind `::` syntax you can now call the underscore.js 
 ## Example
 
 ```javascript
-import { map, reduce } from 'underline'; // Require functions needed
+import { difference, all } from 'underline'; // Require functions needed
 
-// Mapping an array
-[1, 2, 3]::map((e) => e * 10);
-// => [10, 20, 30]
+// Differece of arrays
+[12, 1, 2, 3, 10, 11]::difference([10, 11, 12])
+// => [1, 2, 3]
 
-// Sum an array
-[1, 2, 3]::reduce((a, e) => a + e, 0)
-// => 6
+// Check for all elements are less than 10
+[1, 2, 3, 10]::all((e) => e < 10)
+// => false
 
 /////
 // VS
 /////
 
 // Functional way to map
-_.map([1, 2, 3], (e) => e * 10)
+_.difference([12, 1, 2, 3, 10, 11], [10, 11, 12])
 
 // and reduce
-_.reduce([1, 2, 3], (a, e) => a + e, 0)
+_.all([1, 2, 3, 10], (e) => e < 10)
 ```
 
 **Underline supports chaining without wrapping like underscore**
 
 ```javascript
-[1, 2, 3]::map((e) => e * 10)
-         ::reduce((a, e) => a + e, 0)
-// => 60
+// Chaining difference and all
+[12, 1, 2, 3, 10, 11]::difference([10, 11, 12])
+                     ::all((e) => e < 10)
+// => true
 
 /////
 // VS
 /////
 
 // Too much typing to chain in underscore and get its value
-_.chain([1, 2, 3]).map((e) => e * 10)
-                  .reduce((a, e) => a + e, 0)
-                  .value()
+_.chain([12, 1, 2, 3, 10, 11]).difference([10, 11, 12])
+                              .all((e) => e < 10)
+                              .value()
 ```
 
 ## Try it
