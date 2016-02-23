@@ -4,7 +4,7 @@
   "description": "Bound underscore functions",
   "main": "underline.js",
   "scripts": {
-    "prepublish": "./node_modules/babel/bin/babel.js index.js --out-file underline.js"
+    "build": "babel index.js --out-file underline.js"
   },
   "repository": {
     "type": "git",

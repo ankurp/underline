@@ -1,6 +1,6 @@
-import _ from 'underscore';
+import _, { reduce, wrap } from 'underscore';
 
-export default _.reduce(Object.keys(_), (h, k) => {
-  h[k] = _.wrap(_[k], function(f, ...args) { return f(this, ...args); });
-  return h;
-}, {});
+export default reduce(Object.keys(_), (h, k) => ({
+  ...h,
+  [k]: wrap(_[k], function(f, ...args) { return f(this, ...args); })
+}), {});
