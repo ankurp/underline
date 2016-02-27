@@ -8,7 +8,7 @@ Using modern ES7 functional bind `::` syntax you can now call the underscore.js 
 ## Example
 
 ```javascript
-import { difference, all } from 'underline'; // Require functions needed
+import { difference, all, keys, pluck } from 'underline'; // Require functions needed
 
 // Differece of arrays
 [12, 1, 2, 3, 10, 11]::difference([10, 11, 12])
@@ -18,15 +18,39 @@ import { difference, all } from 'underline'; // Require functions needed
 [1, 2, 3, 10]::all((e) => e < 10)
 // => false
 
+// Extract Keys
+{ a: 1, b: 2 }::keys()
+// => ["a", "b"]
+
+// Pluck property
+[
+  {name: 'moe', age: 40},
+  {name: 'larry', age: 50},
+  {name: 'curly', age: 60}
+]::pluck('name')
+// => ["moe", "larry", "curly"]
+
 /////
 // VS
 /////
 
-// Functional way to map
+// Underscore way for difference
 _.difference([12, 1, 2, 3, 10, 11], [10, 11, 12])
 
-// and reduce
+// all
 _.all([1, 2, 3, 10], (e) => e < 10)
+
+// keys
+_.keys({ a: 1, b: 2})
+// OR
+Object.keys({ a: 1, b: 2})
+
+// and pluck
+_.pluck([
+  {name: 'moe', age: 40},
+  {name: 'larry', age: 50},
+  {name: 'curly', age: 60}
+], 'name')
 ```
 
 **Underline supports chaining without wrapping like underscore**
