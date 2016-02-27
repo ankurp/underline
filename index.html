@@ -23,7 +23,9 @@
       <a href="https://github.com/ankurp/underline"><h1 class="project-name">Underline.js</h1></a>
       <h2 class="project-tagline">underline.js is like underscore.js but using modern ES7 syntax. Try it &darr;</h2>
     </section>
-    <div id="editor">import { difference, all } from 'underline';
+    <div id="editor">"use strict";
+
+import { difference, all, keys } from 'underline';
 
 // Differece of arrays
 console.log('Result of difference:',
