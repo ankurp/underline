@@ -4,6 +4,7 @@
   "description": "Bound underscore functions",
   "main": "underline.js",
   "scripts": {
+    "prepublish": "npm run build",
     "build": "babel index.js --out-file underline.js",
     "test": "mocha --compilers js:babel/register"
   },
