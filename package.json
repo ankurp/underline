@@ -1,6 +1,6 @@
 {
   "name": "underline",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Bound underscore functions",
   "main": "underline.js",
   "scripts": {
