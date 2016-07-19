@@ -5,6 +5,7 @@
   "main": "underline.js",
   "scripts": {
     "prepublish": "npm run build",
+    "lint": "eslint index.js",
     "build": "babel index.js --out-file underline.js",
     "test": "mocha --compilers js:babel/register"
   },
@@ -28,6 +29,7 @@
   "homepage": "http://ankurp.github.io/underline/",
   "devDependencies": {
     "babel": "^5.8.23",
+    "eslint": "^3.1.1",
     "mocha": "^2.4.5"
   },
   "dependencies": {
